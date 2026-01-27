@@ -3,7 +3,7 @@
 
 ### 1-A) Infos des cartes réseau du PC: 
 
-commande necessaire : 'ipconfig /all' 
+commande necessaire : ` ipconfig /all `
 
 #### Interface WiFi
 - nom : Carte réseau sans fil Wi-Fi
@@ -50,5 +50,20 @@ Si on enleve l'adresse réseaux(X.X.X.0) et l'adresse broadcast(X.X.X.255), on a
 
 #### Changer l'adresse IP de la carte WiFi pour une autre
 
-chemin : paramètres réseau → Wi-Fi → IPv44
+chemin : paramètres réseau → Wi-Fi → Attribution d'adresse IP → manuel
+
+![alt text](image-1.png)
+
+### 2-B) nmap
+
+#### Utilisez nmap pour scanner le réseau de votre carte WiFi et trouver une adresse IP libre
+
+1 - Commande pour le réseau Ingésup ` nmap -sn -PE 192.168.1.0/24`
+
+résultat : `Nmap done: 256 IP addresses (0 hosts up) scanned in 53.44 seconds`
+
+2 - Pour trouver le "nom" associés aux adresses IP : `nmap -sL 192.168.1.0/24` 
+
+résultat : 
+![alt text](image-2.png)
 
