@@ -67,3 +67,8 @@ résultat : `Nmap done: 256 IP addresses (0 hosts up) scanned in 53.44 seconds`
 résultat : 
 ![alt text](image-2.png)
 
+### 2-C) Modification d'adresse IP
+
+Depuis Parametres/réseau wifi et internet/ wifi/ propriétés réseau wifi(nom du réseau) : on change manuellement l'IP et la gateway et on peux ensuite se connecter a internet
+
+Attention : L’adresse choisie appartient au même réseau et n’apparaît pas parmi les hôtes actifs détectés, ce qui évite tout conflit d’adresses IP
