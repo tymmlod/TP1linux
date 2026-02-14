@@ -47,3 +47,14 @@ Cette commande permet de crypter en base 64
 ### A) Générez une paire de clés RSA de 2048 bits
 
 Commande : ``` openssl genrsa -out cle_ynov.pem 2048``` 
+
+![alt text](image-12.png)
+
+### B) Paramètres clé
+
+![alt text](image-13.png)
+
+### C) Protéger la paire de clés RSA avec un chiffrement AES
+
+![alt text](image-14.png)
+
