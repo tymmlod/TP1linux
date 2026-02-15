@@ -58,3 +58,86 @@ Commande : ``` openssl genrsa -out cle_ynov.pem 2048```
 
 ![alt text](image-14.png)
 
+### D) Que pouvons nous voir dans ces paramètres ?
+
+Dans les paramètres affichés, on voit :
+
+- la taille de la clé
+
+- le modulus (n)
+
+- l’exposant public (exponent)
+
+- il n'y a aucune donnée privée
+
+### E) Créer une passphrase avec vim ou nano
+
+Avec ```nano pass_ynov ```
+
+![alt text](image-15.png)
+
+Ensuite on chiffre la passphrase avec la clé publique et on la déchiffre après: 
+
+![alt text](image-16.png)
+
+# II. Sans que je vous file les réponses à chaques étapes
+
+## 1. Base64
+
+### A) Génération d’un fichier binaire
+
+Commande : ``` dd if=/dev/urandom of=data.bin bs=1024 count=100 ```
+
+![alt text](image-17.png)
+
+### B) Encodage
+
+Commande : ```base64 data.bin > data.b64```
+
+Pour afficher sons contenue on fait ``` cat data.b64``
+
+Le fichier data.b64 est bien plus volumineux que data.bin
+
+### C) Décodage
+
+![alt text](image-18.png)
+
+### D) Questions
+
+1. La base64 est un encodage, pas un chiffrement car elle n'utilise aucune clé et toute personne peut décoder facilement.
+2. En base64 on transforme 3 octets en 4 caractères ASCII et ces 4 caractères occupes 4 octets de stockage
+3. Un fichier de 100Ko passe a environs 130Ko donc une ogmentation d'environs 33%
+4. La méthode la plus fiable est le hachage cryptographique soit ``` sha256sum fichier1 fichier2``` sous linux
+
+## 2. Chiffrement symétrique – AES
+
+### A) Création d’un message
+
+Commande : ``` nano confidentiel.txt ```
+
+![alt text](image-19.png)
+
+### B) Chiffrement
+
+![alt text](image-20.png)
+
+vÉrification binaire: 
+
+![alt text](image-21.png)
+
+### C) Déchiffrement
+
+![alt text](image-22.png)
+
+### D)  Analyse
+
+![alt text](image-23.png)
+
+### E)  Questions
+
+1. Le sel est aléatoire à chaque chiffrement. Le sel modifie la clé générée à partir du mot de passe donc le chiffrement est différent
+2. Le sel est une donnée aléatoire ajoutée au début du chiffrement qui rend unique la clé dérivée du mot de passe
+3. La clé dérivée du mot de passe ne sera pas la même donc le déchiffrement échouera
+4. Transforme un mot de passe en clé cryptographique sécurisée et effectue un grand nombre d’itérations pour ralentir les attaques par force brute
+
+## 
