@@ -80,4 +80,3 @@ Attention : L’adresse choisie appartient au même réseau et n’apparaît pas
 - pc1 : 192.168.10.1 (wifi) 
 - pc2 : 192.168.10.2 -> gateway pc1 ip
 - regle nat carte wifi (Network manager) masquerade 
-- 
