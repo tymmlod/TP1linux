@@ -33,7 +33,7 @@ commande necessaire : ` ipconfig /all `
 
 chemin : Parametres/réseau wifi et internet/ wifi/ propriétés réseau wifi(nom du réseau)
 
-![alt text](image.png)
+![alt text](image/image.png)
 
  QUESTION : A quoi sert la gateway dans le réseau d'Ingésup ? 
 
@@ -52,7 +52,7 @@ Si on enleve l'adresse réseaux(X.X.X.0) et l'adresse broadcast(X.X.X.255), on a
 
 chemin : paramètres réseau → Wi-Fi → Attribution d'adresse IP → manuel
 
-![alt text](image-1.png)
+![alt text](image/image-1.png)
 
 ### 2-B) nmap
 
@@ -65,7 +65,7 @@ résultat : `Nmap done: 256 IP addresses (0 hosts up) scanned in 53.44 seconds`
 2 - Pour trouver le "nom" associés aux adresses IP : `nmap -sL 192.168.1.0/24` 
 
 résultat : 
-![alt text](image-2.png)
+![alt text](image/image-2.png)
 
 ### 2-C) Modification d'adresse IP
 
