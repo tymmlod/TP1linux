@@ -74,9 +74,94 @@ Depuis Parametres/réseau wifi et internet/ wifi/ propriétés réseau wifi(nom 
 Attention : L’adresse choisie appartient au même réseau et n’apparaît pas parmi les hôtes actifs détectés, ce qui évite tout conflit d’adresses IP
 
 
-#  Part 2 duo
+# II. Exploration locale en duo
 
 - meme reseau et ss reseau et desac pare feux deux pc ufw 
 - pc1 : 192.168.10.1 (wifi) 
 - pc2 : 192.168.10.2 -> gateway pc1 ip
 - regle nat carte wifi (Network manager) masquerade 
+
+## 1. Prérequis
+
+- 2 PC avec des firewall désactivés : 
+    - 1 sous linux (connecté au wifi):
+
+    ![alt text](image-35.png)
+
+    - 1 sous windows : 
+
+    ...............firewall.........
+
+- connection par cable rj45
+
+## 2. Câblage 
+
+![alt text](image-36.png)
+
+## 3. Modification d'adresse IP
+### A) Modifiez l'IP des deux machines pour qu'elles soient dans le même réseau
+- sur linux :
+
+![alt text](image-37.png)
+
+- sur windows : 
+
+................creation ip reseau...............
+
+### B) Utilisez ping pour tester la connectivité entre les deux machines
+
+- Pour linux :
+
+![alt text](image-38.png)
+
+- Pour windows :
+
+ ...................ping vers linux................
+
+### C) Testez avec d'autres masques
+
+- Avec un masque /20 : 
+    ![alt text](image-39.png) 
+    
+    .........masque-20............
+
+    - ping : 
+
+    ![alt text](image-40.png)
+
+- plus petit masque possible (/30): 
+    ![alt text](image-41.png)
+
+    ...........masque 30..................
+
+    - ping  : 
+
+    ![alt text](image-42.png)
+
+## 4. Utilisation d'un des deux comme gateway
+
+### A) PC sans wifi : définir comme passerelle l'adresse IP de l'autre PC
+
+..........gateway..........
+
+### B) Sur Linux, faites le en ligne de commande
+
+![alt text](image-43.png)
+
+### C) Un ping 8.8.8.8 qui fonctionne sur un PC sans carte WiFi.
+
+.........ping 8.8.8.8 ..............
+
+
+## 5. Petit chat privé 
+
+(pour celui ci j'ai fait entre deux terminal sur mon pc linux car le deuxieme pc sous windows n'acceptais pas l'installation de netcat )
+
+Apres l'installation de Netcat on fait :
+
+- dans le terminal 1 : ``` nc -l -p 8888```
+
+- dans le terminal 2 : ```nc 172.16.18.1 8888 ```
+
+![alt text](image-44.png)
+
