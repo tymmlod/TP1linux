@@ -86,71 +86,70 @@ Attention : L’adresse choisie appartient au même réseau et n’apparaît pas
 - 2 PC avec des firewall désactivés : 
     - 1 sous linux (connecté au wifi):
 
-    ![alt text](image-35.png)
+    ![alt text](image/image-35.png)
 
     - 1 sous windows : 
 
-    ...............firewall.........
+    ![alt text](image/image-45.png)
 
 - connection par cable rj45
 
 ## 2. Câblage 
 
-![alt text](image-36.png)
+![alt text](image/image-36.png)
 
 ## 3. Modification d'adresse IP
 ### A) Modifiez l'IP des deux machines pour qu'elles soient dans le même réseau
 - sur linux :
 
-![alt text](image-37.png)
+![alt text](image/image-37.png)
 
 - sur windows : 
 
-................creation ip reseau...............
+![alt text](image/<creation ip reseau.png>)
 
 ### B) Utilisez ping pour tester la connectivité entre les deux machines
 
 - Pour linux :
 
-![alt text](image-38.png)
+![alt text](image/image-38.png)
 
 - Pour windows :
 
- ...................ping vers linux................
-
+ ![alt text](image/<ping vers linux.png>)
 ### C) Testez avec d'autres masques
 
 - Avec un masque /20 : 
-    ![alt text](image-39.png) 
+    ![alt text](image/image-39.png) 
     
-    .........masque-20............
+    ![alt text](image/masque-20.png)
 
     - ping : 
 
-    ![alt text](image-40.png)
+    ![alt text](image/image-40.png)
 
 - plus petit masque possible (/30): 
-    ![alt text](image-41.png)
+    ![alt text](image/image-41.png)
 
-    ...........masque 30..................
+    ![alt text](image/<masque 30.png>)
 
     - ping  : 
 
-    ![alt text](image-42.png)
+    ![alt text](image/image-42.png)
 
 ## 4. Utilisation d'un des deux comme gateway
 
 ### A) PC sans wifi : définir comme passerelle l'adresse IP de l'autre PC
 
-..........gateway..........
+![alt text](image/gateway.png)
 
 ### B) Sur Linux, faites le en ligne de commande
 
-![alt text](image-43.png)
+![alt text](image/image-43.png)
 
 ### C) Un ping 8.8.8.8 qui fonctionne sur un PC sans carte WiFi.
 
-.........ping 8.8.8.8 ..............
+![alt text](image/<ping 8.8.8.8.png>)
 
 
 ## 5. Petit chat privé 
@@ -163,5 +162,5 @@ Apres l'installation de Netcat on fait :
 
 - dans le terminal 2 : ```nc 172.16.18.1 8888 ```
 
-![alt text](image-44.png)
+![alt text](image/image-44.png)
 
